@@ -142,7 +142,7 @@ impl<'a> CoffeeMachine {
                 } else {
                     let mut change_coins = vec![0; coins.len()];
                     for (index, coin) in coins.iter().enumerate() {
-                        change_coins[index] = (change - (change % *coin as u16)) / *coin as u16;
+                        change_coins[index] = change / *coin as u16;
                         change = change % *coin as u16;
                     }
                     let mut change_string =
